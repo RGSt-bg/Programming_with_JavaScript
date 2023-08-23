@@ -1,0 +1,53 @@
+1-Multiply-Number-by-2.js
+
+function multiplyNumberBy2(numb)
+{
+	console.log(numb * 2);
+}
+
+multiplyNumberBy2(5);
+
+=======================================================================================================================================================
+2-Student-Information.js
+
+function studentInformation(name, age, grade)
+{
+	console.log(`Name: ${name}, Age: ${age}, Grade: ${grade.toFixed(2)}`)
+}
+
+studentInformation('John', 15, 5.54678);
+=======================================================================================================================================================
+3-Excellent-grade.js
+
+function excellentGrade(grade)
+{
+	if (grade >= 5.5) console.log("Excellent");
+	else console.log("Not excellent");
+}
+
+excellentGrade(5.50);
+=======================================================================================================================================================
+4-Foreign-Languages.js
+
+function foreignLanguages(country)
+{
+	let lang = "";
+	switch(country)
+	{
+		case "England":
+		case "USA":
+			lang = "English";
+			break;
+		case "Spain":
+		case "Argentina":
+		case "Mexico":
+			lang = "Spanish";
+			break;
+		default:
+			lang = "unknown";
+			break;
+	}
+	console.log(lang);
+}
+
+foreignLanguages("USA");

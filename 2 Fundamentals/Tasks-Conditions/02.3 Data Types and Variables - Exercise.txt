@@ -1,0 +1,69 @@
+e1-Sum-Digits.js
+
+function sumDigits(numb)
+{
+	let sum = 0;
+	let numbAsStr = numb.toString();
+
+	for (let i = 0; i < numbAsStr.length; i++) sum += Number(numbAsStr[i]);
+
+	console.log(sum);
+}
+
+sumDigits(245678);
+sumDigits(97561);
+sumDigits(543);
+
+=======================================================================================================================================
+e2-Chars-to-String.js
+
+function charsToString(str1, str2, str3)
+{
+	
+	//console.log(str1+str2+str3);
+	//console.log("=======================================================");
+	console.log(str1.concat(str2, str3));
+}
+
+charsToString('a','b','c');
+charsToString('%','2','o');
+charsToString('1','5','p');
+
+=======================================================================================================================================
+e3-Town-Info.js
+
+function townInfo(town, population, area)
+{
+	
+	console.log(`Town ${town} has population of ${population} and area ${area} square km.`);
+}
+
+townInfo('Sofia',1286383,492);
+
+=======================================================================================================================================
+e10-Spice-Must-Flow.js
+
+function spiceMustFlow(startingYield)
+{
+	let days = 0;
+	let spiceWarehouse = 0;
+
+	while (startingYield >= 100)
+	{
+		spiceWarehouse += startingYield;
+		days++;
+		spiceWarehouse -= 26;
+		startingYield -= 10;
+		if (startingYield < 100)
+		{
+			spiceWarehouse -= 26;
+			break;
+		}
+	}
+	console.log(days);
+	console.log(spiceWarehouse);
+}
+
+spiceMustFlow(111);
+spiceMustFlow(450);
+

@@ -1,0 +1,23 @@
+e7-Search-for-a-Number.js
+
+function searchForANumber(arrNumbs, arrCounts) {
+
+	let newArrNumbs = [];
+	let numbsGetCount = arrCounts[0];
+	let numbsDelCount = arrCounts[1];
+	let numbSearch = arrCounts[2];
+
+	newArrNumbs = arrNumbs.slice(0, numbsGetCount -1);
+	newArrNumbs.splice(0, numbsDelCount -1);
+	let numbSearchCounter = newArrNumbs.forEach(count);
+
+	return console.log(`Number ${numbSearch} occurs ${numbSearchCounter} times.`);
+
+	function count(numb, index, arr) {
+		let countNum = 0;
+		if (arr[index] === numb) countNum++;
+		return countNum;
+	}
+}
+
+searchForANumber([5, 2, 3, 4, 1, 6], [5, 2, 3]);

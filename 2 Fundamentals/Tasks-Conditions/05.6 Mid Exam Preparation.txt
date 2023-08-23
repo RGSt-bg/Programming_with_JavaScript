@@ -1,0 +1,18 @@
+e3-Heart-Delivery.js
+
+function heartDelivery(inputArr) {
+
+    let houses = inputArr.shift().split("@");
+    let i = 0;
+    let [action, jump] = inputArr[i].split(' ');
+
+    while (action !== "Love!") {
+        [action, jump] = inputArr[i].split(' ');
+	
+	
+    }
+}
+
+heartDelivery(["10@10@10@2", "Jump 1", "Jump 2", "Love!"]);
+
+====================================================================================================================

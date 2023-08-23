@@ -1,0 +1,80 @@
+6-Repainting.js
+
+function repainting(input) {
+
+	let nylon = Number(input[0]);
+	let paint = Number(input[1]);
+	let thinner = Number(input[2]);
+	let hours = Number(input[3]);
+	let bag = 0.4;
+
+	paint = paint * 1.1;
+	nylon = nylon + 2;
+
+	let materSum = nylon * 1.5 + paint * 14.5 + thinner *5 + bag;
+	let allSum = materSum + materSum * hours * 0.3;
+
+	console.log(allSum);
+
+};
+
+	repainting(["10 ","11 ","4 ","8 "]);
+
+====================================================================================
+7-Food-Delivery.js
+
+function foodDelivery(input) {
+
+	let chicken = Number(input[0]);
+	let fish = Number(input[1]);
+	let vegetables = Number(input[2]);
+
+	let dishesSum = chicken * 10.35 + fish * 12.4 + vegetables * 8.15;
+	let allSum = dishesSum + dishesSum * 0.2 + 2.5;
+
+	console.log(allSum);
+
+};
+
+	foodDelivery(["2 ","4 ","3 "]);
+
+====================================================================================
+8-Basketball-Equipment.js
+
+function basketballEquipment(input) {
+
+	let fee = Number(input[0]);
+	let shoes = fee * 0.6;
+	let team = shoes * 0.8;
+	let ball = team * 0.25;
+	let accessories = ball * 0.2;
+	let allSum = fee + shoes + team + ball + accessories;
+
+	console.log(allSum);
+
+};
+
+	basketballEquipment(["365 "]);
+
+====================================================================================
+9-Fish-Tank.js
+
+function fishTank(input) {
+
+	let lenght = Number(input[0]) / 10;
+	let width = Number(input[1]) / 10;
+	let height = Number(input[2]) / 10;
+	let percentage = Number(input[3]);
+
+	let volumeFull = lenght * width * height;
+	let volumeUsable = volumeFull - (volumeFull * percentage /100);
+
+	console.log(volumeUsable);
+
+};
+
+	fishTank(["85 ","75 ","47 ","17 "]);
+
+
+
+

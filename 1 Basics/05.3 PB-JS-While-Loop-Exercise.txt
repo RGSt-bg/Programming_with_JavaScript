@@ -1,0 +1,281 @@
+e1-Old-Books.js
+
+function oldBooks(input)
+{
+	let wantedBook = input[0];
+	let i = 1;
+	let book = input[i];
+
+	while (book !== wantedBook || book !== "No More Books")
+	{
+		if (book === wantedBook)
+		{
+			console.log(`You checked ${i-1} books and found it.`);
+			return;
+		}
+		else if (book === "No More Books")
+		{
+			console.log("The book you search is not here!");
+			console.log(`You checked ${i-1} books.`);
+			return;
+		}
+		else
+		{
+			i++;
+			book = input[i];
+		}
+	}
+
+}
+
+oldBooks(["Troy","Stronger","Life Style","Troy"]);
+
+==========================================================================================================================================================
+e2-Exam-Preparation.js
+
+function examPreparation(input)
+{
+    let badScore = Number(input[0]);
+    let i = 1;
+    let taskName = input[i];
+    let score = Number(input[i+1]);
+    let koftiRabota = 0;
+    let scoreSum = 0;
+    let scoreCounter = 0;
+
+    while (koftiRabota < badScore && taskName !== "Enough")
+    {
+        if (score <= 4) koftiRabota = koftiRabota + 1;
+        
+        scoreSum = scoreSum + score;
+        i = i + 2;
+	scoreCounter = scoreCounter + 1;
+        taskName = input[i];
+        score = Number(input[i+1]);
+
+    }
+
+    if (koftiRabota == badScore) console.log(`You need a break, ${koftiRabota} poor grades.`);
+    else 
+    {
+        scoreSum = scoreSum / scoreCounter;
+        console.log(`Average score: ${scoreSum.toFixed(2)}`);
+        console.log(`Number of problems: ${scoreCounter}`);
+        console.log(`Last problem: ${input[i-2]}`);
+    }
+	
+}
+
+examPreparation(["2","Income","3","Game Info","6","Best Player","4"]);
+
+==========================================================================================================================================================
+e3-Vacation.js
+
+function vacation(input)
+{
+	let moneyVacation = Number(input[0]);
+	let moneyReal = Number(input[1]);
+	let i = 2;
+	let status = input[i];
+	let moneySpSa = Number(input[i+1]);
+	let daysSpend = 0;
+	let daysAll = 0;
+	let flag = false;
+	
+while (moneyVacation > moneyReal && daysSpend < 5)
+{
+	if (status == "spend")
+	{
+		moneyReal = moneyReal - moneySpSa;
+		if (moneyReal < 0) moneyReal = 0;
+		daysSpend = daysSpend + 1;
+		flag = true;
+	}
+	else
+	{
+	moneyReal = moneyReal + moneySpSa;
+	flag = false;
+    daysSpend = 0;
+	}
+
+	daysAll = daysAll + 1;
+    i = i + 2;
+
+    status = input[i];
+	moneySpSa = Number(input[i+1]);
+
+	if (daysSpend >= 5 && flag == true)
+	{
+		console.log("You can't save the money.");
+		console.log(daysAll);
+	}
+
+	if (moneyVacation <= moneyReal) console.log(`You saved the money for ${daysAll} days.`);
+}
+}
+
+vacation(["250","150","save","50","spend","50","save","100","spend","100","spend","50","spend","50"]);
+
+==========================================================================================================================================================
+e4-Walking.js - WORK 70%!!!
+
+function walking(input)
+{
+	let i = 0;
+    	let steps = Number(input[i]);
+	let stepsWalk = 0;
+
+	while (stepsWalk < 10000 && steps != "Going home")
+	{
+		stepsWalk = stepsWalk + steps;
+        	i = i + 1;
+
+        	if (Number(input[i]) >= 0) steps = Number(input[i]);
+        	else steps = input[i];
+    	}
+
+    	if (steps == "Going home") stepsWalk = stepsWalk + Number(input[i+1]);
+
+	if (stepsWalk >= 10000)
+	{
+		console.log("Goal reached! Good job!");
+		steps = stepsWalk - 10000;
+		console.log(`${steps} steps over the goal!`);
+	}
+    	else
+    	{
+        	steps = 10000 - stepsWalk;
+        	console.log(`${steps} more steps to reach goal.`);
+    	}
+
+}
+
+walking(["125","250","4000","30","2678","4682"]);
+
+==========================================================================================================================================================
+e5-Coins.js - WORK 60%!!!
+
+function coins(input)
+{
+	let sum = Number(input[0]);
+	let sumTmp = 0.00;
+	let coinsCount = 0;
+
+	while (sum >= 2)
+	{
+		sum = sum - 2;
+		coinsCount = coinsCount + 1;
+	}
+	
+	while (sum >= 1)
+	{
+		sum = sum - 1;
+		coinsCount = coinsCount + 1;
+	}
+	
+	while (sum >= 0.5)
+	{
+		sum = sum - 0.5;
+		coinsCount = coinsCount + 1;
+	}
+	
+	while (sum >= 0.2)
+	{
+		sum = sum - 0.2;
+		coinsCount = coinsCount + 1;
+	}
+	
+	while (sum >= 0.1)
+	{
+		sum = sum - 0.1;
+		coinsCount = coinsCount + 1;
+	}
+	
+	while (sum >= 0.05)
+	{
+		sum = sum - 0.05;
+		coinsCount = coinsCount + 1;
+	}
+	
+	while (sum >= 0.02)
+	{
+		sum = sum - 0.02;
+		coinsCount = coinsCount + 1;
+	}
+	
+	while (sum >= 0.01)
+	{
+		sum = sum - 0.01;
+		coinsCount = coinsCount + 1;
+	}
+	console.log(coinsCount);
+}
+
+coins(["1.23"]);
+
+==========================================================================================================================================================
+e6-Cake.js
+
+function cake(input)
+{
+	let piecesAll = Number(input[0]) * Number(input[1]);
+	let i = 2;
+	let piecesEat = Number(input[i]);
+	let pieces = 0;
+
+	while (pieces < piecesAll && piecesEat != "STOP")
+	{
+		pieces = pieces + piecesEat;
+        	i = i + 1;
+
+        	if (Number(input[i]) >= 0) piecesEat = Number(input[i]);
+        	else piecesEat = input[i];
+	}
+
+	if (pieces >= piecesAll)
+	{
+		pieces = pieces - piecesAll;
+		console.log(`No more cake left! You need ${pieces} pieces more.`);
+	}
+    	else
+    	{
+		pieces = piecesAll - pieces;
+        	console.log(`${pieces} pieces are left.`);
+    	}
+}
+
+cake[("10","10","20","20","20","20","21"]);
+
+==========================================================================================================================================================
+e7-Moving.js
+
+function moving(input)
+{
+	let volumeAll = Number(input[0]) * Number(input[1]) * Number(input[2]);
+	let i = 3;
+	let boxes = Number(input[i]);
+	let boxesAll = 0;
+	
+	while (boxesAll < volumeAll && boxes != "Done")
+	{
+		boxesAll = boxesAll + boxes;
+        	i = i + 1;
+
+        	if (Number(input[i]) >= 0) boxes = Number(input[i]);
+        	else boxes = input[i];
+	}
+
+	if (boxesAll >= volumeAll)
+	{
+		boxesAll = boxesAll - volumeAll;
+		console.log(`No more free space! You need ${boxesAll} Cubic meters more.`);
+	}
+    	else
+    	{
+		boxesAll = volumeAll - boxesAll;
+        	console.log(`${boxesAll} Cubic meters left.`);
+    	}
+	
+}
+
+moving(["10","10","2","20","20","20","20","122"]);

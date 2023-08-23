@@ -1,0 +1,108 @@
+3-Numbers-1-to-N-with-Step-3.js
+
+function printNumbers1ToNWithStep3(input)
+{
+    let n = Number(input[0]);
+
+    for (let i = 1; i <= n; i += 3)
+    {
+        console.log(i);
+    }
+}
+
+printNumbers1ToNWithStep3(["50"]);
+
+==========================================================================================================================================================
+4-Even-Powers-of-2.js
+
+function evenPowersOf2(input)
+{
+    let n = Number(input[0]);
+
+    for (let i = 0; i <= n; i += 2) console.log(Math.pow(2, i));
+}
+
+evenPowersOf2(["7"]);
+
+==========================================================================================================================================================
+5-Character-Sequence.js НЕ РАБОТИИИИИ, МЪРШАТА!
+
+function characterSequence(input)
+{
+	let text = input[0];
+
+	for (let i = 0; i <= text.lenght; i++)
+		{
+		let letter = text[i];
+		console.log(letter);
+		}
+}
+
+characterSequence(["softuni"]);
+
+==========================================================================================================================================================
+6-Vowels-Sum.js НЕ РАБОТИИИИИ, МЪРШАТА!
+
+function vowelsSum(input)
+{
+	let word = input[0];
+	let sum = 0;	
+
+	for (let i = 0; i <= word.lenght; i++)
+		{
+		let letter = word[i];
+		if (letter == "a") sum = sum + 1;
+		if (letter == "e") sum = sum + 2;
+		if (letter == "i") sum = sum + 3;
+		if (letter == "o") sum = sum + 4;
+		if (letter == "u") sum = sum + 5;
+		}
+	console.log(sum);
+}
+
+vowelsSum(["hello"]);
+
+==========================================================================================================================================================
+7-Sum-of-Numbers.js НЕ РАБОТИИИИИ, МЪРШАТА!
+
+function sumOfNumbers(input)
+{
+	let numb = input[0] + "";
+	let sum = 0;	
+
+	for (let i = 0; i <= numb.lenght; i++)
+		{
+		let digit = Number(numb[i]);
+		sum = sum + digit;
+		}
+	console.log(`The sum of the digits is:${sum}`);
+
+}
+
+sumOfNumbers(["1234"]);
+
+==========================================================================================================================================================
+8-Numbers-Divisible-by-9.js
+
+function numbersDivisibleBy9(input)
+{
+	let numb1 = Number(input[0]);
+	let numb2 = Number(input[1]);
+	let sum = 0;
+
+	for (let i = numb1; i <= numb2; i++)
+		{
+		if (i % 9 == 0) sum = sum + i;
+		}
+
+	console.log(`The sum: ${sum}`)
+
+	for (let i = numb1; i <= numb2; i++)
+		{
+		if (i % 9 == 0) console.log(i)
+		}
+
+}
+
+numbersDivisibleBy9(["100", "200"]);
+

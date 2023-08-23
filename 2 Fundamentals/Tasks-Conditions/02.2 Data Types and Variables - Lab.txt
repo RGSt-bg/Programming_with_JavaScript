@@ -1,0 +1,31 @@
+4-Integer-and-Float.js
+
+function integerAndFloat(n1, n2, n3)
+{
+	let sum = n1 + n2 + n3;
+	if (sum % 1 == 0) console.log(`${sum} - Integer`);
+	else console.log(`${sum} - Float`);
+
+	//sum % 1 === 0 ? sum += ' - Integer' : sum += ' - Float';
+	//console.log(sum);
+}
+
+integerAndFloat(9, 100, 1.1);
+
+==========================================================================================================================================
+5-Amazing-Numbers.js
+
+function amazingNumbers(numb)
+{
+	let sum = 0;
+	let result = 0;
+
+	numb = numb.toString();
+	for (let i = 0; i < numb.length; i++) sum += Number(numb[i]);
+
+	result = sum.toString().includes('9');
+
+	console.log(result ? `${numb} Amazing? True` : `${numb} Amazing? False`);
+}
+
+amazingNumbers(1233);

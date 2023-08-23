@@ -1,0 +1,62 @@
+1-Sum First-and-Last-Array-Elements.js
+
+function sumFirstAndLastArrayElements(input)
+{
+	console.log(input[0]+input[input.length-1]);
+}
+
+sumFirstAndLastArrayElements([20, 30, 40]);
+
+================================================================================================================
+2-Day-of-Week.js
+
+function dayOfWeek(numb)
+{
+	let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
+	if (numb >= 1 && numb <= 7) console.log(days[numb-1]);
+	else console.log("Invalid day!");
+}
+
+dayOfWeek(11);
+
+================================================================================================================
+3-Reverse-an-Array-of-Numbers.js
+
+function reverseAnArrayOfNumbers(numb, arrNumb)
+{
+	let newArr = [];
+    	let printStr = "";
+
+	for (let i = numb-1; i >= 0; i--)
+	{
+		newArr[numb-1-i] = arrNumb[i];
+        	printStr += arrNumb[i] + " ";
+	}
+
+    console.log(printStr);
+}
+
+reverseAnArrayOfNumbers(3, [10, 20, 30, 40, 50]);
+
+================================================================================================================
+4-Reverse-in-Place.js
+
+function reverseInPlace(arrStrings)
+{
+	let tmpStr = "";
+	let printStr = "";
+
+	for (let i = 0; i < Math.floor(arrStrings.length/2); i++)
+	{
+		tmpStr = arrStrings[i];
+		arrStrings[i] = arrStrings[arrStrings.length-1-i];
+		arrStrings[arrStrings.length-1-i] = tmpStr;
+	}
+
+	for (let i = 0; i < arrStrings.length; i++) printStr += arrStrings[i] + " ";
+
+	console.log(printStr);
+}
+
+reverseInPlace(['a', 'b', 'c', 'd', 'e']);

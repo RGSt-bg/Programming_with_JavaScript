@@ -1,0 +1,35 @@
+3-Moving-Target.js
+
+function movingTarget(inputArr) {
+
+    let targets = inputArr.shift().split("!");
+    let i = 0;
+    let [action, index, value] = inputArr[i].split(' ');
+
+    while (action !== "End") {
+        [action, index, value] = inputArr[i].split(' ');
+        switch (action) {
+            case "Shoot" : {
+
+                break;
+            }
+            case "Add" : {
+
+                break;
+            }
+            case "Strike" : {
+
+                break;
+            }
+
+        i++
+        }
+    }
+    return console.log(targets.join("|"));
+}
+
+movingTarget(["52 74 23 44 96 110", "Shoot 5 10", "Shoot 1 80", "Strike 2 1", "Add 22 3", "End"]);
+movingTarget(["1 2 3 4 5", "Strike 0 1", "End"]);
+//https://judge.softuni.org/Contests/Practice/Index/2305#2
+
+======================================================================================================================

@@ -1,0 +1,94 @@
+e6-Password-Validator.js
+
+function passwordValidator(passwd) {
+
+	let isValidPasswd = true;
+	let isDigital = 0;
+	let ch = "";
+	
+	if (passwd.length < 6 || passwd.length > 10) {
+		isValidPasswd = false;
+		console.log("Password must be between 6 and 10 characters");
+	}
+
+	for (let i = 0; i < passwd.length; i++) {
+		ch = passwd[i];
+		if (ch.charCodeAt() < 48 || ch.charCodeAt() > 57 && ch.charCodeAt() < 65 || ch.charCodeAt() > 90 && ch.charCodeAt() < 97 || ch.charCodeAt() > 122) {
+			isValidPasswd = false;
+			console.log("Password must consist only of letters and digits");
+		}
+
+		if (ch.charCodeAt() >= 48 || ch.charCodeAt() <= 57) isDigital++;
+	}
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+    let isValidPass = true;
+    let isInvalidLength = passwd.length < 6 || passwd.length > 10;
+ 
+    if (isInvalidLength) {
+        isValidPass = false;
+        console.log("Password must be between 6 and 10 characters");
+    }
+ 
+    let isOnlyLettersAndDigits = true;
+    let digitsCounter = 0;
+ 
+    for (let index = 0; index < passwd.length; index++) {
+        let currentCode = passwd.charCodeAt(index);
+        let isNotNumber = currentCode < 48 || currentCode > 57;
+        let isNumber = currentCode >= 48 && currentCode <= 57;
+        let isNotSmallLetter = currentCode < 97 || currentCode > 122;
+        let isNotBigLetter = currentCode < 65 || currentCode > 90;
+ 
+        if (isNumber) {
+            digitsCounter++;
+        }
+ 
+        if (isNotNumber && isNotSmallLetter && isNotBigLetter) {
+            isValidPass = false;
+            isOnlyLettersAndDigits = false;
+        }
+    }
+    if (!isOnlyLettersAndDigits) {
+        console.log("Password must consist only of letters and digits");
+    }
+    if(!(digitsCounter >= 2)){
+        isValidPass = false;
+        console.log("Password must have at least 2 digits");
+    }
+ 
+    if(isValidPass){
+        console.log('Password is valid');
+    }
+}
+
+passwordValidator('logIn');
+passwordValidator('MyPass123');
+passwordValidator('Pa$s$s');

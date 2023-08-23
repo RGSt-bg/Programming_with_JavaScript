@@ -1,0 +1,65 @@
+me1-Car-Wash.js
+
+function carWash(commands) {
+
+	let carClean = 0;
+
+	for (let i = 0; i < commands.length; i++) {
+		let str = commands[i];
+
+		switch (str) {
+
+		case "soap" : {
+			carClean += 10;
+			break;
+			}
+		case "water" : {
+			carClean *= 1.2;
+			break;
+			}
+		case "vacuum cleaner" : {
+			carClean *= 1.25;
+			break;
+			}
+		case "mud" : {
+			carClean *= 0.9;
+			break;
+			}
+		}
+	}
+	return console.log(`The car is ${carClean.toFixed(2)}% clean.`);
+}
+
+carWash(['soap', 'soap', 'vacuum cleaner', 'mud', 'soap', 'water']);
+carWash(["soap", "water", "mud", "mud", "water", "mud", "vacuum cleaner"]);
+
+============================================================================================================================
+me3-Points-Validation.js - ЗА ДЕБЪГВАНЕ!!!
+
+function pointsValidation(coordinates) {
+
+    for (i = 0; i <= 3; i += 2) {
+
+	    let distance = 0;
+
+	    if (i === 2) {
+	    	distance = validDistance(coordinates[i], coordinates[i+1], coordinates[i+2], coordinates[i+3]);
+	    	if (distance === Math.round(distance)) console.log(`{${coordinates[i]}, ${coordinates[i+1]}} to {${coordinates[i+2]}, ${coordinates[i+3]}} is valid`);
+	    	else console.log(`{${coordinates[i]}, ${coordinates[i+1]}} to {${coordinates[i+2]}, ${coordinates[i+3]}} is invalid`);
+	    }
+	    else {
+	    distance = validDistance(0, 0, coordinates[i], coordinates[i+1]);
+	    if (distance === Math.round(distance)) console.log(`{${coordinates[i]}, ${coordinates[i+1]}} to {0, 0} is valid`);
+	    else console.log(`{${coordinates[i]}, ${coordinates[i+1]}} to {0, 0} is invalid`);
+	    }
+    }
+
+    function validDistance(x1, y1, x2, y2) {
+        return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+    }
+}
+
+pointsValidation([2, 1, 1, 1]);
+
+============================================================================================================================
+
